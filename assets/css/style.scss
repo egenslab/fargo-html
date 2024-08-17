@@ -618,6 +618,46 @@ ul {
         transition: all 0.5s ease-out 0s;
     }
 
+    &.location-btn {
+        background: var(--white-color);
+        color: var(--title-color);
+        border: 1px solid var(--white-color2);
+        padding: 13px 24px;
+        max-width: 143px;
+        border-radius: 100px;
+
+        &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            left: 15%;
+            right: -20%;
+            top: -4%;
+            bottom: 0;
+            border-radius: 2px;
+            background-color: var(--title-color);
+            transform: skewX(45deg) scale(0, 1);
+            z-index: -1;
+            transition: all 0.5s ease-out 0s;
+        }
+
+        &:hover {
+            color: var(--white-color);
+
+            svg {
+                path {
+                    stroke: var(--title-color);
+                }
+            }
+
+            &::after {
+                transform: skewX(45deg) scale(1, 1);
+                height: 150%;
+                width: 150%;
+            }
+        }
+    }
+
     svg {
         path {
             stroke: var(--white-color);
@@ -1969,20 +2009,25 @@ ul {
 
 .add-area {
     margin-bottom: -130px;
+
     @include xxl-down-device() {
-      margin-bottom: -120px;
+        margin-bottom: -120px;
     }
+
     @include xl-down-device() {
-      margin-bottom: -100px;
+        margin-bottom: -100px;
     }
+
     @include lg-down-device() {
-      margin-bottom: -70px;
+        margin-bottom: -70px;
     }
+
     @include md-down-device() {
-      margin-bottom: -50px;
+        margin-bottom: -50px;
     }
+
     @include sm-down-device() {
-      margin-bottom: -40px;
+        margin-bottom: -40px;
     }
 }
 
@@ -1995,10 +2040,10 @@ ul {
     background-position: center center;
     min-height: 80vh;
     padding: 200px 0;
-  
+
     @include md-down-device() {
-       padding: 80px 0;
-      }
+        padding: 80px 0;
+    }
 
     .customer-review {
         position: relative;
@@ -2253,6 +2298,7 @@ ul {
         background-image: url(../image/primium-care-image.png);
         width: 100%;
         background-size: contain;
+
         .premium-card-content {
             max-width: 280px;
 
@@ -2289,9 +2335,29 @@ ul {
         position: relative;
         background-repeat: no-repeat;
         min-height: 375px;
-        background-position: 330px;
+        background-position: 325px;
         background-image: url(../image/newsletter.image.png);
-       
+
+        @include xxl-down-device() {
+            background-position: 230px;
+        }
+
+        @include xl-down-device() {
+            background-position: 140px;
+        }
+
+        @include lg-down-device() {
+            background-position: 380px;
+        }
+
+        @include md-down-device() {
+            background-position: 200px;
+        }
+
+        @include sm-down-device() {
+            background-position: 150px;
+        }
+
 
         .newsletter-card-content {
             max-width: 250px;
@@ -2314,13 +2380,14 @@ ul {
                 text-align: left;
                 color: var(--title-color2);
                 margin-bottom: 50px;
-                span{
+
+                span {
                     font-family: var(--font-dm-sans);
                     font-size: 18px;
                     font-weight: 500;
                     text-align: left;
                     color: var(--title-color);
-                    
+
                 }
 
             }
@@ -2990,6 +3057,443 @@ ul {
                 @include md-down-device() {
                     margin-bottom: 10px;
                 }
+            }
+        }
+    }
+}
+
+/*=====================================
+  17. breadcrumbs section 
+========================================*/
+.breadcrumbs-section {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 152px 0px 167px;
+
+    .breadcrumbs-content {
+        h1 {
+            font-family: var(--font-merriweather);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            color: var(--white-color);
+            margin-bottom: 20px;
+
+        }
+
+        .breadcrumb-list {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #FFFFFF33;
+            background: #00000080;
+            padding: 5px 15px;
+            border-radius: 15px;
+            flex-wrap: wrap;
+
+            li {
+                line-height: 1;
+                font-family: var(--font-dm-sans);
+                color: var(--white-color);
+                font-size: 14px;
+                font-weight: 500;
+                text-align: left;
+                padding-left: 16px;
+                position: relative;
+                text-transform: uppercase;
+
+                &::before {
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background-color: var(--primary-color);
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &:first-child {
+                    padding-left: 0;
+
+                    &::before {
+                        display: none;
+                        visibility: hidden;
+                    }
+                }
+
+                a {
+                    color: var(--white-color);
+                    transition: 0.35s;
+
+
+                    &:hover {
+                        color: var(--primary-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================================
+  17. breadcrumbs section 
+========================================*/
+.about-fargo-section {
+    .about-content {
+        p {
+            font-family: var(--font-dm-sans);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--title-color2);
+            margin-bottom: 30px;
+
+            span {
+                font-family: var(--font-dm-sans);
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--title-color);
+
+            }
+        }
+    }
+}
+
+.healthy-food-section {
+    background: #F0F0F0;
+    padding: 80px 0;
+    min-height: 665px;
+
+    .healthy-food-section-title {
+        h4 {
+            font-family: var(--font-merriweather);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+            text-align: left;
+            color: var(--title-color);
+            margin-bottom: 30px;
+
+        }
+
+    }
+
+    .healthy-food-section-content {
+        p {
+            font-family: var(--font-dm-sans);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            text-align: left;
+            color: var(--title-color2);
+            margin-bottom: 25px;
+
+            &.style-2 {
+                font-family: var(--font-dm-sans);
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 1.5;
+                text-align: left;
+                color: var(--title-color);
+            }
+
+            span {
+                color: var(--title-color);
+                font-weight: 600;
+            }
+
+        }
+    }
+}
+
+.healthy-food-bottom-image {
+    margin-top: -220px;
+}
+
+.online-food-store-section {
+    .online-food-section-title {
+        max-width: 480px;
+        margin: 0 auto;
+
+        h4 {
+            font-family: var(--font-merriweather);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 42px;
+            text-align: center;
+            color: var(--title-color);
+
+        }
+
+        p {
+            font-family: var(--font-dm-sans);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 25px;
+            text-align: center;
+            color: var(--title-color2);
+
+        }
+    }
+
+    .contact-area {
+        border: 1px solid var(--primary-color);
+        border-radius: 20px;
+        padding: 20px 50px;
+        width: 100%;
+        background-image: url(../image/about-us/icon/vector.svg);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+
+
+        .found-us-btn {
+            justify-content: center;
+            display: flex;
+            margin-top: -40px;
+            z-index: 9;
+
+            a {
+                font-family: var(--font-merriweather);
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 28px;
+                text-align: center;
+                color: var(--white-color);
+                background: var(--primary-color);
+                padding: 8px 30px;
+                border-radius: 100px;
+                margin-bottom: 30px;
+
+            }
+        }
+
+        h5 {
+            font-family: var(--font-merriweather);
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            color: var(--white-color);
+            background: var(--primary-color);
+            padding: 12px 15px;
+            border-radius: 100px;
+            max-width: 175px;
+            display: flex;
+            justify-content: center;
+            margin-top: -50px;
+
+        }
+
+        ul {
+            li {
+                font-family: var(--font-dm-sans);
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1;
+                text-align: left;
+                color: var(--title-color2);
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                span {
+                    font-family: var(--font-merriweather);
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 1;
+                    text-align: left;
+                    color: var(--title-color);
+
+                }
+
+            }
+        }
+    }
+
+    .about-banner-card {
+        background: #F0F0F0;
+        padding: 45px 40px;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        height: 100%;
+        background-position: right;
+        background-image: url(../image/about-us/about-banner-image.png);
+        background-size: contain;
+        width: 100%;
+
+        &.style-2 {
+            background-image: url(../image/about-us/about-banner-image2.png);
+
+        }
+
+        .banner-card-content {
+            max-width: 280px;
+
+            h4 {
+                font-family: var(--font-merriweather);
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 1.2;
+                text-align: left;
+                color: var(--title-color);
+                margin-bottom: 15px;
+
+            }
+
+            p {
+                font-family: var(--font-dm-sans);
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 1.5;
+                text-align: left;
+                color: var(--title-color2);
+                margin-bottom: 0;
+
+            }
+        }
+    }
+}
+
+//  nav tab
+
+.nav-tabs {
+    border-bottom: unset;
+    gap: 20px;
+    justify-content: center;
+    display: flex;
+
+    li {
+        padding: 0;
+
+        button {
+            background: var(--white-color);
+            border-radius: 25px;
+            color: var(--title-color);
+            font-family: var(--font-merriweather);
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 25px;
+            text-align: left;
+            padding: 10px 50px;
+            width: 100%;
+
+            &.active {
+                color: var(--white-color);
+                background-color: var(--title-color);
+                border-color: var(--primary-color);
+            }
+        }
+    }
+}
+
+.fargo-mart-area {
+    border-bottom: 1px solid var(--white-color2);
+    padding-bottom: 30px;
+
+    .fargo-mart-area-content {
+        h4 {
+            font-family: var(--font-merriweather);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 42px;
+            text-align: left;
+            color: var(--title-color);
+            margin-bottom: 20px;
+
+        }
+
+        p {
+            font-family: var(--font-dm-sans);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            text-align: left;
+            color: var(--title-color2);
+            margin-bottom: 25px;
+
+            &.style-2 {
+                font-family: var(--font-dm-sans);
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 28px;
+                text-align: left;
+                color: var(--title-color);
+                margin-bottom: 10px;
+            }
+
+            span {
+                color: var(--title-color);
+                font-weight: 600;
+            }
+        }
+
+        .location-btn {
+            margin-top: 50px;
+        }
+    }
+}
+
+.fargo-mart-video-area {
+    .fargo-mart-section-title {
+        max-width: 500px;
+        margin: 0 auto;
+
+        h4 {
+            font-family: var(--font-merriweather);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            color: var(--title-color);
+            margin-bottom: 25px;
+
+        }
+
+        p {
+            font-family: var(--font-dm-sans);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            text-align: center;
+            color: var(--title-color2);
+
+        }
+    }
+
+    .video-section-image {
+        margin-top: 45px;
+    }
+}
+
+.company-info {
+    .company-info-content {
+        h4 {
+            font-family: var(--font-merriweather);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+            text-align: left;
+            color: var(--title-color);
+            margin-bottom: 25px;
+
+        }
+
+        p {
+            font-family: var(--font-dm-sans);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            text-align: left;
+            color: var(--title-color2);
+            margin-bottom: 30px;
+            span{
+                color: var(--title-color);
+                font-weight: 600;
             }
         }
     }

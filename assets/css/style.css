@@ -511,6 +511,39 @@ ul {
   z-index: -1;
   transition: all 0.5s ease-out 0s;
 }
+.primary-btn3.location-btn {
+  background: var(--white-color);
+  color: var(--title-color);
+  border: 1px solid var(--white-color2);
+  padding: 13px 24px;
+  max-width: 143px;
+  border-radius: 100px;
+}
+.primary-btn3.location-btn::after {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 15%;
+  right: -20%;
+  top: -4%;
+  bottom: 0;
+  border-radius: 2px;
+  background-color: var(--title-color);
+  transform: skewX(45deg) scale(0, 1);
+  z-index: -1;
+  transition: all 0.5s ease-out 0s;
+}
+.primary-btn3.location-btn:hover {
+  color: var(--white-color);
+}
+.primary-btn3.location-btn:hover svg path {
+  stroke: var(--title-color);
+}
+.primary-btn3.location-btn:hover::after {
+  transform: skewX(45deg) scale(1, 1);
+  height: 150%;
+  width: 150%;
+}
 .primary-btn3 svg path {
   stroke: var(--white-color);
 }
@@ -1974,8 +2007,33 @@ ul {
   position: relative;
   background-repeat: no-repeat;
   min-height: 375px;
-  background-position: 330px;
+  background-position: 325px;
   background-image: url(../image/newsletter.image.png);
+}
+@media (max-width: 1399px) {
+  .newsletter-section .newsletter-card {
+    background-position: 230px;
+  }
+}
+@media (max-width: 1199px) {
+  .newsletter-section .newsletter-card {
+    background-position: 140px;
+  }
+}
+@media (max-width: 991px) {
+  .newsletter-section .newsletter-card {
+    background-position: 380px;
+  }
+}
+@media (max-width: 767px) {
+  .newsletter-section .newsletter-card {
+    background-position: 200px;
+  }
+}
+@media (max-width: 576px) {
+  .newsletter-section .newsletter-card {
+    background-position: 150px;
+  }
 }
 .newsletter-section .newsletter-card .newsletter-card-content {
   max-width: 250px;
@@ -2532,4 +2590,359 @@ ul {
   .fooeter-section .footer-btm .footer-btm-content .copyright-area {
     margin-bottom: 10px;
   }
+}
+
+/*=====================================
+  17. breadcrumbs section 
+========================================*/
+.breadcrumbs-section {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding: 152px 0px 167px;
+}
+.breadcrumbs-section .breadcrumbs-content h1 {
+  font-family: var(--font-merriweather);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  color: var(--white-color);
+  margin-bottom: 20px;
+}
+.breadcrumbs-section .breadcrumbs-content .breadcrumb-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.5019607843);
+  padding: 5px 15px;
+  border-radius: 15px;
+  flex-wrap: wrap;
+}
+.breadcrumbs-section .breadcrumbs-content .breadcrumb-list li {
+  line-height: 1;
+  font-family: var(--font-dm-sans);
+  color: var(--white-color);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 16px;
+  position: relative;
+  text-transform: uppercase;
+}
+.breadcrumbs-section .breadcrumbs-content .breadcrumb-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.breadcrumbs-section .breadcrumbs-content .breadcrumb-list li:first-child {
+  padding-left: 0;
+}
+.breadcrumbs-section .breadcrumbs-content .breadcrumb-list li:first-child::before {
+  display: none;
+  visibility: hidden;
+}
+.breadcrumbs-section .breadcrumbs-content .breadcrumb-list li a {
+  color: var(--white-color);
+  transition: 0.35s;
+}
+.breadcrumbs-section .breadcrumbs-content .breadcrumb-list li a:hover {
+  color: var(--primary-color);
+}
+
+/*=====================================
+  17. breadcrumbs section 
+========================================*/
+.about-fargo-section .about-content p {
+  font-family: var(--font-dm-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--title-color2);
+  margin-bottom: 30px;
+}
+.about-fargo-section .about-content p span {
+  font-family: var(--font-dm-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+.healthy-food-section {
+  background: #F0F0F0;
+  padding: 80px 0;
+  min-height: 665px;
+}
+.healthy-food-section .healthy-food-section-title h4 {
+  font-family: var(--font-merriweather);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: left;
+  color: var(--title-color);
+  margin-bottom: 30px;
+}
+.healthy-food-section .healthy-food-section-content p {
+  font-family: var(--font-dm-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--title-color2);
+  margin-bottom: 25px;
+}
+.healthy-food-section .healthy-food-section-content p.style-2 {
+  font-family: var(--font-dm-sans);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--title-color);
+}
+.healthy-food-section .healthy-food-section-content p span {
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+.healthy-food-bottom-image {
+  margin-top: -220px;
+}
+
+.online-food-store-section .online-food-section-title {
+  max-width: 480px;
+  margin: 0 auto;
+}
+.online-food-store-section .online-food-section-title h4 {
+  font-family: var(--font-merriweather);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: center;
+  color: var(--title-color);
+}
+.online-food-store-section .online-food-section-title p {
+  font-family: var(--font-dm-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  text-align: center;
+  color: var(--title-color2);
+}
+.online-food-store-section .contact-area {
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 20px 50px;
+  width: 100%;
+  background-image: url(../image/about-us/icon/vector.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+.online-food-store-section .contact-area .found-us-btn {
+  justify-content: center;
+  display: flex;
+  margin-top: -40px;
+  z-index: 9;
+}
+.online-food-store-section .contact-area .found-us-btn a {
+  font-family: var(--font-merriweather);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  color: var(--white-color);
+  background: var(--primary-color);
+  padding: 8px 30px;
+  border-radius: 100px;
+  margin-bottom: 30px;
+}
+.online-food-store-section .contact-area h5 {
+  font-family: var(--font-merriweather);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  color: var(--white-color);
+  background: var(--primary-color);
+  padding: 12px 15px;
+  border-radius: 100px;
+  max-width: 175px;
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+}
+.online-food-store-section .contact-area ul li {
+  font-family: var(--font-dm-sans);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: left;
+  color: var(--title-color2);
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.online-food-store-section .contact-area ul li span {
+  font-family: var(--font-merriweather);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: left;
+  color: var(--title-color);
+}
+.online-food-store-section .about-banner-card {
+  background: #F0F0F0;
+  padding: 45px 40px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: right;
+  background-image: url(../image/about-us/about-banner-image.png);
+  background-size: contain;
+  width: 100%;
+}
+.online-food-store-section .about-banner-card.style-2 {
+  background-image: url(../image/about-us/about-banner-image2.png);
+}
+.online-food-store-section .about-banner-card .banner-card-content {
+  max-width: 280px;
+}
+.online-food-store-section .about-banner-card .banner-card-content h4 {
+  font-family: var(--font-merriweather);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  color: var(--title-color);
+  margin-bottom: 15px;
+}
+.online-food-store-section .about-banner-card .banner-card-content p {
+  font-family: var(--font-dm-sans);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--title-color2);
+  margin-bottom: 0;
+}
+
+.nav-tabs {
+  border-bottom: unset;
+  gap: 20px;
+  justify-content: center;
+  display: flex;
+}
+.nav-tabs li {
+  padding: 0;
+}
+.nav-tabs li button {
+  background: var(--white-color);
+  border-radius: 25px;
+  color: var(--title-color);
+  font-family: var(--font-merriweather);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: left;
+  padding: 10px 50px;
+  width: 100%;
+}
+.nav-tabs li button.active {
+  color: var(--white-color);
+  background-color: var(--title-color);
+  border-color: var(--primary-color);
+}
+
+.fargo-mart-area {
+  border-bottom: 1px solid var(--white-color2);
+  padding-bottom: 30px;
+}
+.fargo-mart-area .fargo-mart-area-content h4 {
+  font-family: var(--font-merriweather);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: left;
+  color: var(--title-color);
+  margin-bottom: 20px;
+}
+.fargo-mart-area .fargo-mart-area-content p {
+  font-family: var(--font-dm-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--title-color2);
+  margin-bottom: 25px;
+}
+.fargo-mart-area .fargo-mart-area-content p.style-2 {
+  font-family: var(--font-dm-sans);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+  color: var(--title-color);
+  margin-bottom: 10px;
+}
+.fargo-mart-area .fargo-mart-area-content p span {
+  color: var(--title-color);
+  font-weight: 600;
+}
+.fargo-mart-area .fargo-mart-area-content .location-btn {
+  margin-top: 50px;
+}
+
+.fargo-mart-video-area .fargo-mart-section-title {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.fargo-mart-video-area .fargo-mart-section-title h4 {
+  font-family: var(--font-merriweather);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  color: var(--title-color);
+  margin-bottom: 25px;
+}
+.fargo-mart-video-area .fargo-mart-section-title p {
+  font-family: var(--font-dm-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--title-color2);
+}
+.fargo-mart-video-area .video-section-image {
+  margin-top: 45px;
+}
+
+.company-info .company-info-content h4 {
+  font-family: var(--font-merriweather);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: left;
+  color: var(--title-color);
+  margin-bottom: 25px;
+}
+.company-info .company-info-content p {
+  font-family: var(--font-dm-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--title-color2);
+  margin-bottom: 30px;
+}
+.company-info .company-info-content p span {
+  color: var(--title-color);
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */
