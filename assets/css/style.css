@@ -962,6 +962,7 @@ ul {
   color: var(--title-color);
   padding: 15px 25px;
   transition: 0.35s;
+  text-transform: uppercase;
 }
 @media (max-width: 1399px) {
   .header-area .header-wrapper .category-ans-menu .main-menu-wrap .main-menu li a {
@@ -1221,6 +1222,7 @@ ul {
   font-weight: 700;
   line-height: 20.11px;
   color: var(--title-color);
+  letter-spacing: 1px;
 }
 @media (max-width: 991px) {
   .header-area .header-wrapper .category-area .category-btn span .text {
@@ -2683,8 +2685,8 @@ ul {
 .about-fargo-section .about-content p {
   font-family: var(--font-dm-sans);
   font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1.6;
   color: var(--title-color2);
   margin-bottom: 30px;
 }
@@ -2717,8 +2719,8 @@ ul {
 .healthy-food-section .healthy-food-section-content p {
   font-family: var(--font-dm-sans);
   font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1.6;
   text-align: left;
   color: var(--title-color2);
   margin-bottom: 25px;
@@ -2727,7 +2729,7 @@ ul {
   font-family: var(--font-dm-sans);
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.6;
   text-align: left;
   color: var(--title-color);
 }
@@ -2896,9 +2898,9 @@ ul {
   width: 100%;
 }
 .nav-tabs li button.active {
-  color: var(--white-color);
-  background-color: var(--title-color);
-  border-color: var(--primary-color);
+  color: var(--white-color) !important;
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
 }
 
 .fargo-mart-area {
@@ -2977,11 +2979,11 @@ ul {
 .company-info .company-info-content p {
   font-family: var(--font-dm-sans);
   font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1.6;
   text-align: left;
   color: var(--title-color2);
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 .company-info .company-info-content p span {
   color: var(--title-color);
