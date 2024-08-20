@@ -34,7 +34,7 @@
 		spaceBetween: 30,
 		loop: true,
 		autoplay: {
-			delay: 2500, // Autoplay duration in milliseconds
+			delay: 3500, // Autoplay duration in milliseconds
 			disableOnInteraction: false,
 		},
 		effect: 'fade',             // Use the fade effect
