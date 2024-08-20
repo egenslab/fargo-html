@@ -4,10 +4,10 @@
 		jQuery(this).toggleClass("active");
 	});
 	jQuery(".mobile-menu-btn").on("click", function () {
-		jQuery(".main-menu-wrap").toggleClass("active");
+		jQuery(".sidebar-menu").toggleClass("active");
 	});
 	jQuery(".menu-close").on("click", function () {
-		jQuery(".main-menu-wrap").removeClass("active");
+		jQuery(".sidebar-menu").removeClass("active");
 	});
 	//Quantity Increment
 	$(".quantity__minus").on("click", function (e) {
