@@ -407,6 +407,9 @@ p {
 
 .mb-50 {
     margin-bottom: 50px;
+    @include md-down-device(){
+        margin-bottom: 35px;
+    }
 }
 
 .mb-45 {
@@ -461,9 +464,7 @@ p {
     margin-top: 25px;
 }
 
-.mb-50 {
-    margin-bottom: 50px;
-}
+
 
 .mt-60 {
     margin-top: 60px;
@@ -821,6 +822,9 @@ ul {
     border: 1px solid var(--white-color2);
     border-radius: 100px;
     padding: 15px 40px;
+    @include md-down-device(){
+        margin-top: 30px;
+    }
 
     .swiper-pagination-bullet {
         height: 10px;
@@ -863,6 +867,9 @@ ul {
     background: var(--white-color);
     border-radius: 100px;
     padding: 15px 40px;
+    @include md-down-device(){
+        margin-top: 30px;
+    }
 
     .swiper-pagination-bullet {
         height: 10px;
@@ -1806,7 +1813,10 @@ ul {
             text-align: center;
             color: #000000;
             margin-bottom: 15px;
-
+            @include md-down-device() {
+                line-height: 1.3;
+                font-size: 22px;
+            }
         }
 
         p {
@@ -1816,6 +1826,9 @@ ul {
             line-height: 1.3;
             text-align: center;
             color: #000000;
+            @include md-down-device(){
+                margin-bottom: 0;
+            }
 
         }
     }
@@ -2125,6 +2138,10 @@ ul {
         text-align: center;
         color: var(--title-color);
         margin-bottom: 0;
+        @include md-down-device() {
+            line-height: 1.3;
+            font-size: 22px;
+        }
     }
 }
 
@@ -2139,6 +2156,12 @@ ul {
     position: relative;
     padding: 110px 0;
     z-index: 1;
+    @include lg-down-device(){
+        padding: 90px 0;
+    }
+    @include md-down-device(){
+        padding: 60px 0;
+    }
 
     &::after {
         content: '';
@@ -2151,6 +2174,9 @@ ul {
         width: 100%;
         background-image: url(../image/vector-1.png);
         z-index: -1;
+        @include md-down-device(){
+            display: none;
+        }
     }
 
 
@@ -2167,6 +2193,9 @@ ul {
             height: 130px;
             margin-left: auto;
             margin-right: auto;
+            @include sm-down-device(){
+                margin-bottom: 15px;
+            }
 
             &::after {
                 height: 132px;
@@ -2264,7 +2293,7 @@ ul {
     padding: 200px 0 80px;
 
     @include md-down-device() {
-        padding: 80px 0;
+        padding: 80px 0 60px;
     }
 
     .customer-review {
@@ -2450,6 +2479,9 @@ ul {
         background: var(--white-color);
         border-radius: 100px;
         padding: 15px 40px;
+        @include md-down-device(){
+            margin-top: 30px;
+        }
 
         .swiper-pagination-bullet {
             height: 10px;
@@ -2619,6 +2651,14 @@ ul {
         background-image: url(../image/primium-care-image.png);
         width: 100%;
         background-size: contain;
+        @include xxl-down-device(){
+            padding: 40px 25px;
+            background-position: 120%;
+        }
+        @include xl-down-device() {
+            background-image: unset;
+            min-height: unset;
+        }
 
         .premium-card-content {
             max-width: 280px;
@@ -2631,7 +2671,10 @@ ul {
                 text-align: left;
                 color: var(--title-color);
                 margin-bottom: 20px;
-
+                @include md-down-device() {
+                    line-height: 1.3;
+                    font-size: 22px;
+                }
             }
 
             p {
@@ -2642,6 +2685,9 @@ ul {
                 text-align: left;
                 color: var(--title-color2);
                 margin-bottom: 75px;
+                @include md-down-device(){
+                    margin-bottom: 30px;
+                }
 
             }
 
@@ -2658,25 +2704,16 @@ ul {
         min-height: 375px;
         background-position: 325px;
         background-image: url(../image/newsletter.image.png);
-
-        @include xxl-down-device() {
-            background-position: 230px;
+        @include xxl-down-device(){
+            padding: 40px 25px;
+            background-position: 93%;
+            
         }
+
 
         @include xl-down-device() {
-            background-position: 140px;
-        }
-
-        @include lg-down-device() {
-            background-position: 380px;
-        }
-
-        @include md-down-device() {
-            background-position: 200px;
-        }
-
-        @include sm-down-device() {
-            background-position: 150px;
+            background-image: unset;
+            min-height: unset;
         }
 
 
@@ -2691,6 +2728,10 @@ ul {
                 text-align: left;
                 color: var(--title-color);
                 margin-bottom: 20px;
+                @include md-down-device() {
+                    line-height: 1.3;
+                    font-size: 22px;
+                }
             }
 
             p {
@@ -2701,6 +2742,9 @@ ul {
                 text-align: left;
                 color: var(--title-color2);
                 margin-bottom: 50px;
+                @include md-down-device(){
+                    margin-bottom: 30px;
+                }
 
                 span {
                     font-family: var(--font-dm-sans);
@@ -3066,6 +3110,9 @@ ul {
 .fooeter-section {
     background: var(--title-color);
     padding: 110px 0 0px;
+    @include md-down-device(){
+        padding-top: 60px;
+    }
 
     .footer-button-area {
 
@@ -3187,6 +3234,10 @@ ul {
                 font-weight: 700;
                 text-align: left;
                 color: var(--white-color);
+                @include md-down-device() {
+                    line-height: 1.3;
+                    font-size: 22px;
+                }
             }
         }
 
@@ -3418,6 +3469,10 @@ ul {
             text-align: center;
             color: var(--white-color);
             margin-bottom: 20px;
+            @include md-down-device() {
+                line-height: 1.3;
+                font-size: 22px;
+            }
 
         }
 
@@ -3489,7 +3544,9 @@ ul {
             line-height: 1.6;
             color: var(--title-color2);
             margin-bottom: 30px;
-
+            @include md-down-device(){
+                margin-bottom: 15px;
+            }
             span {
                 font-family: var(--font-dm-sans);
                 font-size: 16px;
@@ -3505,6 +3562,12 @@ ul {
     background: #F0F0F0;
     padding: 80px 0;
     min-height: 665px;
+    @include md-down-device(){
+        padding: 60px 0 130px;
+    }
+    @include md-down-device(){
+        padding: 60px 0 110px;
+    }
 
     .healthy-food-section-title {
         h4 {
@@ -3516,8 +3579,10 @@ ul {
             color: var(--title-color);
             margin-bottom: 30px;
 
-            @include sm-down-device() {
+            @include md-down-device() {
                 line-height: 1.3;
+                font-size: 22px;
+                margin-bottom: 15px;
             }
 
 
@@ -3534,6 +3599,9 @@ ul {
             text-align: left;
             color: var(--title-color2);
             margin-bottom: 25px;
+            @include md-down-device(){
+                margin-bottom: 15px;
+            }
 
             &.style-2 {
                 font-family: var(--font-dm-sans);
@@ -3542,6 +3610,9 @@ ul {
                 line-height: 1.6;
                 text-align: left;
                 color: var(--title-color);
+                @include md-down-device(){
+                    margin-bottom: 15px;
+                }
             }
 
             span {
@@ -3577,7 +3648,10 @@ ul {
             line-height: 42px;
             text-align: center;
             color: var(--title-color);
-
+            @include md-down-device() {
+                line-height: 1.3;
+                font-size: 22px;
+            }
         }
 
         p {
@@ -3599,7 +3673,9 @@ ul {
         background-image: url(../image/about-us/icon/vector.svg);
         background-repeat: no-repeat;
         background-position: right bottom;
-
+        @include md-down-device(){
+            padding: 20px 25px;
+        }
 
         .found-us-btn {
             justify-content: center;
@@ -3650,7 +3726,7 @@ ul {
                 margin-bottom: 25px;
                 display: flex;
                 align-items: center;
-                gap: 20px;
+                line-height: 1.8;
 
                 @include md-down-device() {
                     display: inline-flex;
@@ -3664,7 +3740,19 @@ ul {
                     line-height: 1;
                     text-align: left;
                     color: var(--title-color);
-
+                    padding-right: 15px;
+                }
+                a{
+                    font-family: var(--font-dm-sans);
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 1;
+                    text-align: left;
+                    color: var(--title-color2);  
+                    transition: 0.35s;
+                    &:hover{
+                        color: var(--primary-color);
+                    }
                 }
 
             }
@@ -3684,7 +3772,23 @@ ul {
 
         &.style-2 {
             background-image: url(../image/about-us/about-banner-image2.png);
+            @include md-down-device(){
+                background-image: unset;
+            }
 
+        }
+        @include xxl-down-device(){
+            padding: 40px 25px;
+            background-position: 120%;
+        }
+        @include xxl-down-device(){
+            background-position: 185%;
+        }
+        @include lg-down-device(){
+            background-position: 100%;
+        }
+        @include md-down-device(){
+            background-image: unset;
         }
 
         .banner-card-content {
@@ -3698,7 +3802,10 @@ ul {
                 text-align: left;
                 color: var(--title-color);
                 margin-bottom: 15px;
-
+                @include md-down-device() {
+                    line-height: 1.3;
+                    font-size: 22px;
+                }
             }
 
             p {
@@ -3729,6 +3836,9 @@ ul {
         padding: 20px 30px;
         margin-left: auto;
         margin-right: auto;
+        @include sm-down-device(){
+            padding: 20px;
+        }
 
 
         li {
@@ -3770,6 +3880,11 @@ ul {
             text-align: left;
             color: var(--title-color);
             margin-bottom: 20px;
+            @include md-down-device() {
+                line-height: 1.3;
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
 
         }
 
@@ -3781,6 +3896,9 @@ ul {
             text-align: left;
             color: var(--title-color2);
             margin-bottom: 25px;
+            @include md-down-device(){
+                margin-bottom: 10px;
+            }
 
             &.style-2 {
                 font-family: var(--font-dm-sans);
@@ -3810,6 +3928,9 @@ ul {
 
         .location-btn {
             margin-top: 50px;
+            @include md-down-device(){
+                margin-top: 30px;
+            }
         }
     }
 }
@@ -3827,6 +3948,11 @@ ul {
             text-align: center;
             color: var(--title-color);
             margin-bottom: 25px;
+            @include md-down-device() {
+                line-height: 1.3;
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
 
         }
 
@@ -3837,12 +3963,17 @@ ul {
             line-height: 1.5;
             text-align: center;
             color: var(--title-color2);
-
+            @include md-down-device(){
+                margin-bottom: 0;
+            }
         }
     }
 
     .video-section-image {
         margin-top: 45px;
+        @include md-down-device(){
+            margin-top: 35px;
+        }
     }
 }
 
@@ -3856,6 +3987,11 @@ ul {
             text-align: left;
             color: var(--title-color);
             margin-bottom: 25px;
+            @include md-down-device() {
+                line-height: 1.3;
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
 
         }
 
@@ -3867,6 +4003,9 @@ ul {
             text-align: left;
             color: var(--title-color2);
             margin-bottom: 25px;
+            @include md-down-device(){
+                margin-bottom: 10px;
+            }
 
             span {
                 color: var(--title-color);
@@ -3888,6 +4027,10 @@ ul {
             line-height: 1;
             text-align: center;
             color: var(--title-color);
+            @include md-down-device() {
+                line-height: 1.3;
+                font-size: 22px;
+            }
 
         }
 
