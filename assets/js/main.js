@@ -191,10 +191,10 @@
 		speed: 1500,
 		spaceBetween: 30,
 		loop: true,
-		autoplay: {
-			delay: 2500, // Autoplay duration in milliseconds
-			disableOnInteraction: false,
-		},
+		// autoplay: {
+		// 	delay: 2500, // Autoplay duration in milliseconds
+		// 	disableOnInteraction: false,
+		// },
 		navigation: {
 			nextEl: ".next-1",
 			prevEl: ".prev-1",
@@ -235,6 +235,12 @@
 	});
 
 	$('select').niceSelect();
-
+	$('.video1').fancybox({
+		buttons: [
+			"close",
+		],
+		loop: false,
+		protect: true,
+	});
 
 }(jQuery));
