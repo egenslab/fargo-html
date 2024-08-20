@@ -3440,6 +3440,9 @@ ul {
     padding: 152px 0px 167px;
     position: relative;
     overflow: hidden;
+    @include sm-down-device(){
+        padding: 125px 0 120px;
+    }
 
     &::before {
         content: url(../image/about-us/icon/about-us-banner-icon.svg);

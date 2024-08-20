@@ -2972,6 +2972,11 @@ ul {
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 576px) {
+  .breadcrumbs-section {
+    padding: 125px 0 120px;
+  }
+}
 .breadcrumbs-section::before {
   content: url(../image/about-us/icon/about-us-banner-icon.svg);
   position: absolute;
