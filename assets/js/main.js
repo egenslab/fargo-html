@@ -30,7 +30,7 @@
 
 	var swiper = new Swiper(".banner-slider", {
 		slidesPerView: 1,
-		speed: 1500,
+		speed: 2500,
 		spaceBetween: 30,
 		loop: true,
 		autoplay: {
