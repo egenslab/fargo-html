@@ -647,6 +647,7 @@ ul {
   border: 1px solid var(--white-color2);
   border-radius: 100px;
   padding: 15px 40px;
+  align-items: center;
   margin-bottom: 50px;
 }
 .swiper-pagination .swiper-pagination-bullet,
@@ -934,7 +935,8 @@ ul {
   justify-content: space-between;
 }
 @media (max-width: 991px) {
-  .header-area .header-wrapper .company-logo-main a img, .header-area .header-wrapper .company-logo a img {
+  .header-area .header-wrapper .company-logo-main a img,
+  .header-area .header-wrapper .company-logo a img {
     max-width: 100px;
     width: 100%;
   }
@@ -1391,10 +1393,62 @@ ul {
   top: 4px;
 }
 
+.banner-section {
+  position: relative;
+}
 .banner-section .banner-img img {
   min-height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.banner-section .banner-pagination {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: unset !important;
+  z-index: 9;
+  bottom: unset;
+  gap: 12px;
+  right: 20px;
+  top: 50%;
+  left: unset;
+  transform: translateY(-50%);
+}
+@media (max-width: 576px) {
+  .banner-section .banner-pagination {
+    gap: 6px;
+  }
+}
+.banner-section .banner-pagination .swiper-pagination-bullet {
+  height: 16px;
+  width: 16px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  opacity: 1;
+  position: relative;
+}
+.banner-section .banner-pagination .swiper-pagination-bullet::after {
+  content: "";
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner-section .banner-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  border-color: var(--primary-color2);
+  height: 18px;
+  width: 18px;
+}
+.banner-section .banner-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+  width: 9px;
+  height: 9px;
+  background-color: var(--primary-color2);
 }
 
 /*================================================
@@ -1553,10 +1607,25 @@ ul {
 .product-card .product-image {
   margin-bottom: 25px;
   position: relative;
+  transition: all 0.5s ease-out;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.product-card .product-image::after {
+  position: absolute;
+  width: 200%;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  content: "";
+  z-index: 1;
 }
 .product-card .product-image img {
   border-radius: 10px;
   width: 100%;
+  transition: all 0.5s ease-out;
 }
 .product-card .product-image .batch {
   position: absolute;
@@ -1595,6 +1664,10 @@ ul {
   line-height: 1;
   text-align: center;
   color: var(--title-color);
+  transition: 0.35s;
+}
+.product-card .product-content h6 a:hover {
+  color: var(--primary-color);
 }
 .product-card .product-content span {
   font-family: var(--font-dm-sans);
@@ -1637,6 +1710,14 @@ ul {
   transition: opacity 0.2s, transform 0.2s;
   transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
+.product-card:hover .product-image img {
+  transform: scale(1.1);
+}
+.product-card:hover .product-image::after {
+  height: 250%;
+  transition: all 600ms linear;
+  background-color: transparent;
+}
 
 .section-title h4 {
   font-family: var(--font-merriweather);
@@ -1674,16 +1755,34 @@ ul {
 }
 .category-section .category-content {
   display: block;
+  transition: 0.35s;
 }
-.category-section .category-content img {
+.category-section .category-content .cat-img {
+  position: relative;
   border-radius: 50%;
-  border: 2px solid var(--white-color2);
   transition: 0.35s;
   margin-bottom: 25px;
+  width: 130px;
+  height: 130px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.category-section .category-content img:hover {
-  border: 2px solid var(--primary-color);
-  border-style: dashed;
+.category-section .category-content .cat-img::after {
+  height: 132px;
+  width: 132px;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  left: -1px;
+  top: -1px;
+  transition: 0.35s;
+  position: absolute;
+  content: "";
+}
+.category-section .category-content .cat-img img {
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  position: relative;
 }
 .category-section .category-content h6 {
   font-family: var(--font-merriweather);
@@ -1693,7 +1792,22 @@ ul {
   text-align: center;
   color: var(--title-color);
 }
+.category-section .category-content:hover {
+  transition: 0.35s;
+}
+.category-section .category-content:hover .cat-img::after {
+  border: 2px dashed #5FBA47;
+  animation: rotate 8s linear infinite;
+}
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*================================================
 10. Cart section
 =================================================*/
@@ -1902,8 +2016,28 @@ ul {
   border: 1px solid var(--white-color2);
   border-radius: 10px;
   width: 100%;
+  transition: all 0.5s ease-out;
+}
+.blog-post-section .blog-post-card .blog-post-image {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+  border-radius: 10px;
+  display: block;
+}
+.blog-post-section .blog-post-card .blog-post-image::after {
+  position: absolute;
+  width: 200%;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  content: "";
+  z-index: 1;
 }
 .blog-post-section .blog-post-card .blog-post-image img {
+  transition: all 0.5s ease-out;
   border-radius: 10px;
   width: 100%;
 }
@@ -1911,7 +2045,7 @@ ul {
   padding: 25px 0 20px 20px;
   width: 100%;
 }
-.blog-post-section .blog-post-card .blog-post-content span {
+.blog-post-section .blog-post-card .blog-post-content a {
   font-family: var(--font-dm-sans);
   font-size: 14px;
   font-weight: 500;
@@ -1922,6 +2056,17 @@ ul {
   align-items: center;
   gap: 8px;
   margin-bottom: 15px;
+  transition: 0.35s;
+}
+.blog-post-section .blog-post-card .blog-post-content a svg {
+  transition: 0.35s;
+  fill: var(--title-color);
+}
+.blog-post-section .blog-post-card .blog-post-content a:hover {
+  color: var(--primary-color);
+}
+.blog-post-section .blog-post-card .blog-post-content a:hover svg {
+  fill: var(--primary-color);
 }
 .blog-post-section .blog-post-card .blog-post-content h5 {
   max-width: 350px;
@@ -1952,6 +2097,14 @@ ul {
   text-align: left;
   color: var(--title-color2);
   margin-bottom: 0;
+}
+.blog-post-section .blog-post-card:hover .blog-post-image img {
+  transform: scale(1.1);
+}
+.blog-post-section .blog-post-card:hover .blog-post-image::after {
+  height: 250%;
+  transition: all 600ms linear;
+  background-color: transparent;
 }
 
 /*================================================

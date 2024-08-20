@@ -42,7 +42,7 @@
 		  crossFade: true           // Enable cross-fade transition
 		},
 		pagination: {
-			el: ".swiper-pagination",
+			el: ".banner-pagination",
 			clickable: true,
 		},
 
